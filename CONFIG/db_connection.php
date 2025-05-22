@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$password = "9na]H36az*rcut)z";
+$password = "";
 $database = "NationalUnity";
 
 $conn = new mysqli ($host,$user,$password,$database);
