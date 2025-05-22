@@ -1,0 +1,308 @@
+/* css/estilos_main.css */
+:root {
+    /* Modo Claro (Default) */
+    --primary-color: #48D1CC; /* Turquesa Suave */
+    --primary-hover-color: #40B8B3;
+    --secondary-bg-color: #F8F9FA; /* Gris Muy Claro */
+    --content-bg-color: #FFFFFF;
+    --text-color: #333333;
+    --text-secondary-color: #6c757d;
+    --border-color: #dee2e6;
+    --table-header-bg: #e9ecef;
+    --table-row-hover-bg: #f1f3f5;
+    --box-shadow-color: rgba(0, 0, 0, 0.075);
+    --font-family: 'Poppins', sans-serif;
+    --border-radius: 8px;
+    --button-text-color: #FFFFFF;
+    --button-secondary-bg: #6c757d;
+    --button-secondary-hover-bg: #5a6268;
+    --button-danger-bg: #F08080;
+    --button-danger-hover-bg: #dc3545;
+    --button-success-bg: #90EE90;
+    --button-success-hover-bg: #218838;
+}
+
+body.dark-mode {
+    /* Modo Oscuro */
+    --primary-color: #52D8D0;
+    --primary-hover-color: #48D1CC;
+    --secondary-bg-color: #1a1a2e; /* Azul oscuro profundo */
+    --content-bg-color: #24243e; /* Un poco más claro que el fondo */
+    --text-color: #e0e0e0; /* Texto claro */
+    --text-secondary-color: #a0a0c0; /* Texto secundario más claro */
+    --border-color: #40405f; /* Borde más oscuro */
+    --table-header-bg: #30304a;
+    --table-row-hover-bg: #383854;
+    --box-shadow-color: rgba(0, 0, 0, 0.25);
+    --button-text-color: #e0e0e0; /* O un color oscuro si el fondo del botón es claro */
+    --button-secondary-bg: #5a6268;
+    --button-secondary-hover-bg: #495057;
+    --button-danger-bg: #ff8f8f;
+    --button-danger-hover-bg: #f08080;
+    --button-success-bg: #8fdd8f;
+    --button-success-hover-bg: #63b377;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-header {
+    background-color: var(--content-bg-color);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px var(--box-shadow-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.main-header .logo {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.header-actions .welcome-user {
+    margin-right: 20px;
+    font-size: 0.95em;
+}
+
+.btn-logout {
+    background-color: var(--button-danger-bg);
+    color: var(--button-text-color);
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+body.dark-mode .btn-logout {
+    color: #1a1a2e; /* Texto oscuro para contraste en botón rojo claro */
+}
+
+
+.btn-logout:hover {
+    background-color: var(--button-danger-hover-bg);
+}
+
+/* Estilos para el botón de cambio de tema */
+.theme-switcher-container {
+    /* Se posicionará dentro de .header-actions*/
+    margin-right: 20px; /* Espacio si está junto a otros elementos */
+}
+
+.theme-toggle-btn {
+    background-color: transparent; /* Fondo transparente para que se integre */
+    color: var(--text-secondary-color); /* Color del icono */
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+/* Fin estilos botón de tema */
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--content-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px var(--box-shadow-color);
+    transition: background-color 0.3s ease;
+}
+
+.page-title {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 2.2em;
+}
+
+.tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed;
+    overflow-wrap: break-word; 
+   
+}
+
+.tasks-table th,
+.tasks-table td {
+    padding: 12px 15px; /* Default padding for desktop */
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color 0.3s ease;
+
+}
+
+.tasks-table thead th {
+    background-color: var(--table-header-bg);
+    font-weight: 600;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tasks-table tbody tr:hover {
+    background-color: var(--table-row-hover-bg);
+    transition: background-color 0.2s ease;
+}
+
+.tasks-table .actions a,
+.tasks-table .actions button {
+    margin-right: 8px;
+    padding: 6px 10px;
+    font-size: 0.85em;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--button-text-color);
+    border: none;
+    cursor: pointer;
+}
+body.dark-mode .tasks-table .actions a,
+body.dark-mode .tasks-table .actions button {
+    color: #1a1a2e; /* Texto oscuro para contraste en botones de acción */
+}
+
+
+.tasks-table .actions .btn-edit { background-color: var(--button-secondary-bg); }
+.tasks-table .actions .btn-edit:hover { background-color: var(--button-secondary-hover-bg); }
+
+.tasks-table .actions .btn-complete { background-color: var(--button-success-bg); }
+.tasks-table .actions .btn-complete:hover { background-color: var(--button-success-hover-bg); }
+
+.tasks-table .actions .btn-archive { background-color: var(--button-danger-bg); }
+.tasks-table .actions .btn-archive:hover { background-color: var(--button-danger-hover-bg); }
+
+.no-tasks {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary-color);
+}
+
+.btn-add-task {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+body.dark-mode .btn-add-task {
+    color: #1a1a2e;
+}
+
+
+.btn-add-task:hover {
+    background-color: var(--primary-hover-color);
+}
+
+/* Prioridad y Estado Badges */
+.badge {
+    padding: 0.3em 0.6em;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    color: #fff;
+}
+body.dark-mode .badge {
+    color: #1a1a2e; /* Para mejor contraste en modo oscuro */
+}
+
+.badge-alta { background-color: #dc3545; } /* Rojo */
+.badge-media { background-color: #ffc107; color: #212529 !important; } /* Amarillo, texto oscuro */
+.badge-baja { background-color: #17a2b8; } /* Info Azul */
+
+.badge-pendiente { background-color: #6c757d; } /* Gris */
+.badge-en-progreso { background-color: #007bff; } /* Azul Primario */
+.badge-completada { background-color: #28a745; } /* Verde Éxito */
+.badge-cancelada { background-color: #343a40; } /* Gris Oscuro */
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        position: relative;
+    }
+
+    .theme-switcher-container {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        margin-right: 0;
+        z-index: 100;
+    }
+
+    .main-header .logo {
+        margin-left: 45px; 
+        margin-bottom: 10px;
+    }
+    
+    .header-actions {
+        width: 100%;
+        align-items: flex-start;
+    }
+    .header-actions .welcome-user {
+         margin-right: 0;
+         margin-bottom: 10px;
+    }
+
+
+    .container {
+        margin: 20px 15px;
+        padding: 15px;
+    }
+
+    .tasks-table {
+        font-size: 0.9em;
+        
+    }
+
+    .tasks-table th, .tasks-table td {
+        padding: 8px 10px; 
+    }
+
+   
+    .tasks-table .actions a,
+    .tasks-table .actions button {
+        display: block; 
+        margin-bottom: 5px; 
+        margin-right: 0; 
+        text-align: center; 
+        width: 100%; 
+        box-sizing: border-box; /
+    }
+}

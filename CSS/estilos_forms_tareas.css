@@ -1,0 +1,129 @@
+/* css/estilos_forms_tareas.css */
+
+.form-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--content-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px var(--box-shadow-color);
+    transition: background-color 0.3s ease;
+}
+
+.form-container h1 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-secondary-color);
+    transition: color 0.3s ease;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: var(--font-family);
+    background-color: var(--input-bg-color, var(--content-bg-color)); /* Fallback por si no está definida input-bg-color */
+    color: var(--input-text-color, var(--text-color)); /* Fallback */
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+body.dark-mode .form-group input[type="text"],
+body.dark-mode .form-group input[type="date"],
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group select {
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+}
+
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(72, 209, 204, 0.25);
+}
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus,
+body.dark-mode .form-group select:focus {
+     box-shadow: 0 0 0 0.2rem rgba(82, 216, 208, 0.35);
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end; /* Alinea botones a la derecha */
+    gap: 10px; /* Espacio entre botones */
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+body.dark-mode .btn-submit {
+    color: #1a1a2e; /* Texto oscuro para contraste */
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.btn-cancel {
+    background-color: var(--button-secondary-bg);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+body.dark-mode .btn-cancel {
+    color: #e0e0e0;
+}
+
+.btn-cancel:hover {
+    background-color: var(--button-secondary-hover-bg);
+}
+
+.error-message-form {
+    background-color: var(--error-bg-color, rgba(240, 128, 128, 0.1));
+    color: var(--error-text-color, #F08080);
+    border: 1px solid var(--error-border-color, #F08080);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 0.9em;
+}
